@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management</title>
+  <!-- Ant Design CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd/dist/antd.min.css">
+  <style>
+    .top-center-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px; /* Add margin for separation */
+    }
+    .form-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .form-section .ant-input {
+      margin-bottom: 10px;
+      width: 100%;
+      max-width: 300px; /* Limit width to maintain responsiveness */
+    }
+    .form-section .ant-btn {
+      width: 100%;
+      max-width: 300px; /* Limit width to maintain responsiveness */
+    }
+    .ant-table-container {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 20px;
+    }
+    .ant-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .ant-table th,
+    .ant-table td {
+      border: 1px solid #e8e8e8;
+      padding: 8px;
+      text-align: left;
+    }
+    .ant-table th {
+      background-color: #f5f5f5;
+    }
+    .ant-table th:first-child,
+    .ant-table td:first-child {
+      width: 15%;
+    }
+    .ant-table th:nth-child(2),
+    .ant-table td:nth-child(2) {
+      width: 30%;
+    }
+    .ant-table th:nth-child(3),
+    .ant-table td:nth-child(3) {
+      width: 30%;
+    }
+    .ant-table th:last-child,
+    .ant-table td:last-child {
+      width: 25%;
+    }
+    .ant-table-action {
+      text-align: center;
+    }
+    .ant-table-action button {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-center-container">
+    <div class="container form-section">
+      <h2>User Management</h2>
+      <form id="userForm">
+        <div style="width: 100%; max-width: 300px;">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" class="ant-input" required>
+        </div>
+
+        <div style="width: 100%; max-width: 300px;">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" class="ant-input" required>
+        </div>
+
+        <div style="width: 100%; max-width: 300px;">
+          <button type="submit" id="addUser" class="ant-btn ant-btn-primary">Add User</button>
+          <button type="button" id="editUser" class="ant-btn ant-btn-primary" style="display: none;">Edit User</button>
+          <button type="button" id="cancelEdit" class="ant-btn" style="display: none;">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="container ant-table-container">
+      <h3>Users List</h3>
+      <table class="ant-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th class="ant-table-action">Action</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody">
+          <!-- User entries will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Ant Design JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/antd/dist/antd.min.js"></script>
+  <!-- Your custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
